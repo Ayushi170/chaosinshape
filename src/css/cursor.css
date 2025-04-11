@@ -77,8 +77,11 @@
   opacity: 1;
   color: white;
 }
+/* Completely hide cursor and outline on touch devices */
 @media (pointer: coarse) {
-  .custom-cursor {
+  .cursor,
+  .outline {
     display: none !important;
   }
 }
+
