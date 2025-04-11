@@ -5,13 +5,15 @@ import "../css/cursor.css";
 const CustomCursor = () => {
   const [cursorText, setCursorText] = useState("");
   const [cursorVisible, setCursorVisible] = useState(true);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const location = useLocation(); // Detects page changes
   useEffect(() => {
-    const isTouch = window.matchMedia("(pointer: coarse)").matches;
-    if (isTouch) setCursorVisible(false);
+    const touchDetected = window.matchMedia("(pointer: coarse)").matches;
+    setIsTouchDevice(touchDetected);
   }, []);
   
   useEffect(() => {
+    if (isTouchDevice) return;
     const cursor = document.querySelector(".cursor");
     const outline = document.querySelector(".outline");
 
@@ -90,7 +92,9 @@ const CustomCursor = () => {
         item.removeEventListener("mouseleave", handleMouseLeave);
       });
     };
-  }, [location.pathname]); // Runs every time the URL changes
+  }, [location.pathname,  isTouchDevice]); // Runs every time the URL changes
+
+  if (isTouchDevice) return null;
 
   return (
     <>
