@@ -77,3 +77,13 @@
   opacity: 1;
   color: white;
 }
+@media (max-width: 768px) {
+  .cursor,
+  .outline {
+    display: none !important;
+  }
+
+  * {
+    cursor: auto !important; /* Restore normal cursor */
+  }
+}
