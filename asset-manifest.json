@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/chaosinshape/static/css/main.4ac19f12.css",
-    "main.js": "/chaosinshape/static/js/main.94d38286.js",
+    "main.css": "/chaosinshape/static/css/main.666611b1.css",
+    "main.js": "/chaosinshape/static/js/main.a7cc797b.js",
     "static/media/VcWeb HomePage.mp4": "/chaosinshape/static/media/VcWeb HomePage.82ff5e8d32a117dd2ae6.mp4",
     "static/media/craft.jpg": "/chaosinshape/static/media/craft.af928d1cec2803db9def.jpg",
     "static/media/VcWeb AboutUs.mp4": "/chaosinshape/static/media/VcWeb AboutUs.c9f69f3db35c885501b9.mp4",
@@ -38,11 +38,11 @@
     "static/media/greenjelly-07.svg": "/chaosinshape/static/media/greenjelly-07.a28548b17276d9576810575d1f3394af.svg",
     "static/media/underline.svg": "/chaosinshape/static/media/underline.4c7fc6b153176f0cc94a.svg",
     "index.html": "/chaosinshape/index.html",
-    "main.4ac19f12.css.map": "/chaosinshape/static/css/main.4ac19f12.css.map",
-    "main.94d38286.js.map": "/chaosinshape/static/js/main.94d38286.js.map"
+    "main.666611b1.css.map": "/chaosinshape/static/css/main.666611b1.css.map",
+    "main.a7cc797b.js.map": "/chaosinshape/static/js/main.a7cc797b.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ac19f12.css",
-    "static/js/main.94d38286.js"
+    "static/css/main.666611b1.css",
+    "static/js/main.a7cc797b.js"
   ]
 }
