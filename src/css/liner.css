@@ -1,0 +1,38 @@
+body{
+    padding:0px;
+    overflow-x:hidden;
+    background: #C7E1AC;
+  }
+  .spancediv{
+    height:30px;  
+    border-radius:30px;
+    color:#fff;
+    font-size:50px;
+    text-align:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .spancediv{
+    background: transparent;
+  }
+  .spancediv2{
+    background: transparent;
+  }
+  .spancediv3{
+    background: transparent;
+  }
+  .spancediv4{
+    background: transparent;
+  }
+  .big-title,.big-titles,.big-titlesw{
+    font-size: clamp(1.5rem, 4vw, 3rem);  /* Responsive Font Size */
+    font-weight: 400;
+    position:relative;
+    left:10px;
+    margin-left: 8vw;
+    white-space: nowrap;
+    right: 81vw;
+  }
+  

@@ -1,0 +1,233 @@
+/* Reset Default Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+  width: 100vw;
+}
+
+.style-1 .char,
+.style-6 .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  padding: 7vw;
+}
+
+.bg-image img {
+  width: 100%; /* Make sure image covers full width */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 7vw;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width for positioning */
+  height: 100%; /* Full height for positioning */
+}
+
+.top-left {
+  font-size: clamp(1.5rem, 4vw, 3rem); 
+  font-weight: 400;
+  position: absolute;
+  top: 20vw;
+  left: 7vw;
+  color: #558257;
+  max-width: 40%;
+  text-align: left;
+}
+
+.bottom-right {
+  font-size: clamp(1.5rem, 4vw, 3rem); 
+  font-weight: 400;
+  max-width: 40%;
+  position: absolute;
+  right: 7vw;
+  bottom: 40vw; /* Reduced from 30vw to balance position */
+  color: #558257;
+  text-align: right;
+}
+
+
+
+.header {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.2s ease-out;
+}
+
+.headerVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SVG Overlay */
+.svg-scroll{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+  pointer-events: none;
+}
+.svg-scroll path{
+  stroke: green;
+}
+
+
+/* Sticky Image when at the bottom */
+.sticky-img {
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Overlay Container */
+.overlay-container {
+  position: absolute;
+  top: 10vh; /* Adjusted distance from top */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Adjusted spacing between rows */
+  padding: 6vh 2vw; /* Adjusted padding */
+  z-index: 1;
+}
+
+/* Individual Text Blocks */
+.text-row {
+  margin-bottom: 20vh; /* Increased spacing between rows */
+}
+
+/* Left-aligned Text */
+.text-left {
+  text-align: left;
+  margin-left: 8vw; /* Adjusted margin */
+  max-width: 42%;
+}
+
+/* Right-aligned Text */
+.text-right {
+  text-align: right;
+  margin-right: 8vw; /* Adjusted margin */
+  max-width: 42%;
+  margin-left: auto;
+}
+
+/* Typography */
+.overlay-container h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem);  /* Responsive Font Size */
+  font-weight: 400;
+  margin-bottom: 1.2rem; /* Adjusted margin */
+  color: #558257;
+  line-height: 1.4; /* Adjusted line height */
+}
+
+.overlay-container h2 {
+  font-size: clamp(1rem, 3vw, 2rem); /* Responsive Font Size */
+  font-weight: 300;
+  line-height: 80%;
+  color: #558257;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .overlay-container {
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    position: fixed; /* Keeps text centered while background scrolls */
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding: 6vh 2vw;
+    z-index: 7;
+    transform: none; /* Remove transform for better positioning */
+  }
+
+  .text-row { 
+    margin-bottom: 2vh; /* Less space between rows */
+    width: 90%;
+    position: absolute /* Ensures text is within flexbox */
+  }
+
+  .text-left, 
+  .text-right {
+    max-width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  .text-left.active, .text-right.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+  .bg-image {
+    width: 100vw;
+    height: auto;
+    overflow: hidden; /* Hides overflow and ensures cropping */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+  }
+
+  .bg-image img {
+    min-width: 760px; /* Ensures image never shrinks below 480px */
+    width: 100vw; /* Fills viewport width */
+    height: auto;
+    object-fit: cover; /* Crops from both sides */
+    object-position: center; /* Ensures the center of the image remains visible */
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay-container {
+    padding: 12vh 5vw;
+  }
+  
+  .text-row {
+    margin-bottom: 30%;
+  }
+
+  .text-left, 
+  .text-right {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+
+  /* Image Container */
+  .bg-image {
+    width: 100vw;
+    height: auto;
+    overflow: hidden; /* Hides overflow and ensures cropping */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .bg-image img {
+    min-width: 600px; /* Ensures image never shrinks below 480px */
+    width: 100vw; /* Fills viewport width */
+    height: auto;
+    object-fit: cover; /* Crops from both sides */
+    object-position: center; /* Ensures the center of the image remains visible */
+    overflow: hidden;
+  }
+}

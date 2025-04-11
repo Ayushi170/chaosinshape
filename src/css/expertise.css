@@ -1,0 +1,179 @@
+
+  .expertise-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    background-color: #C5ECAC;
+    border-radius: 40px 40px 0 0;
+  }
+
+  .text-center {
+    color: #558257;
+    font-size: clamp(0.7rem, 3vw, 1.5rem);
+    font-weight: 400;
+    text-align: left;
+    margin-top: 3rem;
+  }
+
+  .skills-list {
+    margin-bottom: 50px;
+  }
+
+  .skill-item {
+    position: relative;
+    padding: 12px;
+    overflow: hidden;
+    height: clamp(70px, 7vw, 90px);
+    border-bottom: 1.5px solid white;
+    background: transparent !important;
+    color: #558257;
+    font-size: clamp(1rem, 4vw, 2.5rem);
+    font-weight: 400;
+    text-align: left;
+    transition: height 0.7s ease-in-out; /* Smooth shrinking */
+  }
+  .skill-title {
+    width: 100%;
+    white-space: normal;
+  }  
+
+  /* Expand skill item smoothly */
+  .skill-item.expanded {
+    height: 20rem; /* Adjusted to fit both description & tools */
+  }
+
+  /* Skill content is always present, but hidden initially */
+  .skill-content {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 
+      opacity 0.8s ease-in-out, 
+      transform 0.8s ease-in-out,
+      visibility 0s linear 0.7s; /* Delayed hiding */
+  }
+
+  /* Show skill content smoothly */
+  .skill-item.expanded .skill-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0.2s; /* Small delay for a natural reveal */
+  }
+
+  /* Hide text after skill-item shrinks */
+  .skill-item:not(.expanded) .skill-content {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 
+      opacity 0.8s ease-in-out, 
+      transform 0.8s ease-in-out,
+      visibility 0s linear 1.5s; /* Delayed hiding */
+      
+  }
+
+  /* Description styling */
+  .skill-description {
+    font-size: clamp(0.5rem, 3vw, 1.2rem);
+    color: #476c48;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    max-width: 80%;
+  }
+  .skill-year {
+    font-size: clamp(0.7rem, 3vw, 1.5rem);
+    color: #476c48;
+    margin-top: 2rem;
+    max-width: 80%;
+    font-weight: 500;
+  }
+  .tool-chip {
+    margin: 0;
+    color: white;
+    padding: 5px 10px;
+    display: inline-block;
+    background-color: #558257;
+    border-radius: 10px;
+    font-size: clamp(0.5rem, 3vw, 0.8rem);
+    font-weight: 400;
+    text-align: left;
+  }
+  
+  .expertise-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1rem;        /* spacing from content above */
+    margin-bottom: 0 !important;  /* remove unwanted bottom spacing */
+    padding-bottom: 0;       /* prevent extra bottom space */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 
+      opacity 0.8s ease-in-out,
+      transform 0.8s ease-in-out,
+      visibility 0s linear 1.5s;
+  }
+  
+  
+
+  /* Tools appear with description */
+  .skill-item.expanded .expertise-tools {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+
+  /* Tools disappear AFTER skill item shrinks */
+  .skill-item:not(.expanded) .expertise-tools {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 
+      opacity 0.8s ease-in-out, 
+      transform 0.8s ease-in-out,
+      visibility 0s linear 1.5s; /* Matches skill-item shrink time */
+  }
+
+  /* Tool badges */
+  .expertise-tools h3 {
+    margin: 0 !important;
+    color: white;
+    padding: 5px 10px;
+    display: inline-block;
+    background-color: #558257;
+    border-radius: 10px;
+    font-size: clamp(0.2rem, 3vw, 0.7rem);
+    font-weight: 400;
+    text-align: left;
+  }
+
+@media (max-width: 768px) {
+  .skill-item.expanded {
+    height: 25rem; /* Adjusted to fit both description & tools */
+  }
+  .skill-item{
+    height: clamp(60px, 7vw, 90px);
+  }
+  }
+
+@media (max-width: 480px){
+  .skill-item{
+    height: 70px;
+  }
+  .skill-title{
+    max-width: 60%;
+  }
+  .skill-item.expanded {
+    height: 23rem; /* Adjusted to fit both description & tools */
+  }
+  .expertise-section{
+    min-height: 60%;
+  }
+}

@@ -1,0 +1,109 @@
+/* Contact.css */
+.contact-container {
+    background-color: #F7FFF2;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px 20px;
+    text-align: center;
+}
+.jellyfish-overlay {
+    position: absolute;
+    top: 15%; /* Adjust as needed */
+    left: 40%; /* Adjust as needed */
+    width: 35vh; /* Adjust size as needed */
+    height: auto;
+    z-index: 0; /* Ensures it overlays on top */
+    opacity: 0.8; /* Optional transparency */
+    pointer-events: none; /* Prevents interaction with the image */
+    animation: shrinkAnimation 4s ease-in-out infinite; /* Apply the shrinking animation */
+    transform-origin: top;
+}
+@keyframes shrinkAnimation {
+    0% {
+        transform: scaleY(1); /* Original size */
+    }
+    50% {
+        transform: scaleY(0.9); /* Shrink vertically */
+    }
+    100% {
+        transform: scaleY(1); /* Back to original size */
+    }
+}
+
+/* .jellyfish-bg {
+    background-image: url('../assets/images/jellyfish.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: clamp(300px, 50vw, 500px);
+    height: clamp(300px, 50vw, 500px);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+} */
+
+.contact-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.contact-heading {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: #558257;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.italic {
+    font-style: italic;
+    color: #558257;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.contact-link {
+    font-size: clamp(0.5rem, 3vw, 1.2rem);
+    color: #558257;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-link:hover {
+    font-weight: 200;
+}
+
+.linkedin-link {
+    font-size: clamp(0.5rem, 3vw, 1.2rem);
+    color: #5D97D1;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.linkedin-link:hover {
+    font-weight: 200;
+}
+@media (max-width: 768px){
+   .jellyfish-overlay{
+    left: 30%;
+   }
+}
+@media (max-width: 480px){
+    .jellyfish-overlay{
+        left: 15%;
+        max-width: 30vh;
+    }
+}

@@ -1,0 +1,100 @@
+/* Import the Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Reset default margins, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Apply Poppins font to the entire website */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F7FFF2; /* Background color applied globally */
+}
+.app-wrapper {
+  position: relative;
+  opacity: 0;
+  animation: fadeInApp 0.5s ease-in-out 0.2s forwards;
+}
+
+@keyframes fadeInApp {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Ensure full width without white borders */
+html, body, #root, .app-wrapper {
+  position: relative; /* Ensures it's within normal flow */
+  z-index: 1; /* Ensures it's below interactive elements */
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure consistent padding for the container */
+.container, .container-fluid {
+  padding: 0px !important; /* Removes unwanted extra space */
+  max-width: 100% !important;
+}
+
+/* Global margin for paragraphs */
+p {
+  margin-bottom: 15px; /* Adds space between paragraphs */
+}
+
+/* Margin for headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 20px; /* Adds space below headings */
+}
+
+/* Centering the content */
+.App {
+  text-align: center;
+}
+
+/* App logo styling */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/* Logo animation */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Header Styling */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* Link Styling */
+.App-link {
+  color: #61dafb;
+  text-decoration: none; /* Removes underline */
+  margin-top: 20px; /* Adds space above the link */
+}
+
+/* Keyframes for spinning logo */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

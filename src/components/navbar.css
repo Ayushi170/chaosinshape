@@ -1,0 +1,106 @@
+.bottom-navbar {
+  position: fixed;
+  bottom: 30px; /* ensure it floats higher above */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px;
+  background-color: #dee9d650;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(156, 167, 154, 0.479);
+  z-index: 999;
+  backdrop-filter: blur(30px);
+  overflow: hidden;
+  pointer-events: auto;
+}
+@media (max-width: 768px){
+  .bottom-navbar{
+    width: 80%;
+    height: auto
+  }
+}
+@media (max-width: 480px){
+  .nav-box{
+    font-size: 0.5rem;
+  }
+}
+
+.nav-btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-box {
+  width: 100%;
+  max-width: 120px;
+  height: 32px;
+  border-radius: 7px;
+  overflow: hidden;
+  font-size: 0.7rem;
+  color: #446846d6;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.fill-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #55825774;
+  z-index: 0;
+  transition: none; /* <== This ensures instant fill sync with scroll */
+}
+
+.nav-box:hover .fill {
+  transition: width 0.3s ease; /* <== Optional smoothness on hover only */
+  color: white;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover effect */
+.nav-box:hover {
+  width: 100%;
+  background-color: #55825728; /* light overlay */
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.slider-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px; /* change from max-width */
+  height: 32px;
+  border-radius: 7px;
+  border: 2px solid white;
+  pointer-events: none;
+  z-index: 2;
+  transform: translateX(0); /* this is updated by GSAP */
+  transition: none;
+}

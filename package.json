@@ -1,0 +1,51 @@
+{
+  "name": "chaosinshape",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://ayushi170.github.io/my-react-portfolio",
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
+    "bootstrap": "^5.3.3",
+    "chaosinshape": "file:",
+    "cra-template": "1.2.0",
+    "gsap": "^3.12.7",
+    "jquery": "^3.7.1",
+    "lucide-react": "^0.477.0",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.9",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.5",
+    "react-scripts": "5.0.1",
+    "react-scroll": "^1.9.3",
+    "split-type": "^0.3.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}

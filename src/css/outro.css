@@ -1,0 +1,81 @@
+section {
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+section p {
+  font-size: clamp(2rem, 4vw, 4rem);
+  word-break: keep-all;         /* Prevents breaking words mid-way */
+  overflow-wrap: normal;
+  white-space: normal;          /* Ensures normal wrapping behavior */
+}
+
+.svg-draw-wrapper {
+  background: #C5ECAC;
+  text-align: center;
+  overflow: hidden;
+}
+
+.drawing-svg {
+  width: 100%;
+  height: auto;
+}
+
+.drawing-path {
+  stroke: #88C7DB;
+  stroke-width: 10;
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 0 var(--path-length);
+  stroke-dashoffset: 0;
+  animation: drawAndEraseSameDirection 20s ease-in-out infinite;
+}
+
+@keyframes drawAndEraseSameDirection {
+  0% {
+    stroke-dasharray: 0 var(--path-length);  /* hidden (start of draw) */
+  }
+
+  40% {
+    stroke-dasharray: var(--path-length) 0;  /* fully drawn */
+  }
+
+  60% {
+    stroke-dasharray: var(--path-length);    /* start erasing */
+  }
+
+  80%{
+    stroke-dasharray: var(--path-length) 0;  /* fully drawn */
+  }
+
+  100% {
+    stroke-dasharray: 0 var(--path-length);  /* fully erased (ready for next loop) */
+  }
+}
+
+
+
+.reveal-type .word {
+  display: inline-block;
+  white-space: pre;
+  transition: color 0.3s ease;
+}
+
+
+/* Optional: Responsive spacing & clean layout */
+.wrapper {
+  padding: 0 7vw;
+  background-color: #C5ECAC;
+  border-radius: 0 0 40px 40px;
+}
+
+/* section:nth-of-type(3) {
+  background: #ffff00;
+}
+
+section:nth-of-type(4) {
+  background: rgb(29, 29, 29);
+  color: white;
+} */
