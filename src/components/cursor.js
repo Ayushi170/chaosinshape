@@ -5,27 +5,34 @@ import "../css/cursor.css";
 const CustomCursor = () => {
   const [cursorText, setCursorText] = useState("");
   const [cursorVisible, setCursorVisible] = useState(true);
-  const location = useLocation(); // Detects page changes
+  const location = useLocation();
 
   useEffect(() => {
+    // Detect mobile/touch device
+    const isMobileDevice = () =>
+      typeof window !== "undefined" &&
+      ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+
+    if (isMobileDevice()) {
+      setCursorVisible(false);
+      return; // Exit early if mobile
+    }
+
     const cursor = document.querySelector(".cursor");
     const outline = document.querySelector(".outline");
 
-    if (!cursor || !outline) return; // Ensure elements exist before applying changes
+    if (!cursor || !outline) return;
 
-    // Show cursor again when returning to the page
     setCursorVisible(true);
 
-    // Move cursor with mouse
     const moveCursor = (e) => {
-      let x = e.clientX;
-      let y = e.clientY;
+      const x = e.clientX;
+      const y = e.clientY;
       outline.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
       cursor.style.left = `${x}px`;
       cursor.style.top = `${y}px`;
     };
 
-    // Functions to handle hover effects
     const handleMouseOver = (text) => {
       setCursorText(text);
       outline.classList.add("outline-hover");
@@ -36,12 +43,10 @@ const CustomCursor = () => {
       outline.classList.remove("outline-hover");
     };
 
-    // Select elements requiring hover effects
     const interactiveElements = document.querySelectorAll(".hover-effect, .project-image-wrapper, h2");
     const h4Elements = document.querySelectorAll("h4");
     const linkElements = document.querySelectorAll(".name-link");
 
-    // Attach event listeners
     document.addEventListener("mousemove", moveCursor);
 
     interactiveElements.forEach((item) => {
@@ -59,15 +64,6 @@ const CustomCursor = () => {
       item.addEventListener("mouseleave", handleMouseLeave);
     });
 
-    // Ensure cursor resets on navigation
-    const resetCursorOnPageChange = () => {
-      setCursorText("");
-      setCursorVisible(true);
-      outline.classList.remove("outline-hover");
-    };
-    resetCursorOnPageChange();
-
-    // Cleanup function
     return () => {
       document.removeEventListener("mousemove", moveCursor);
 
@@ -86,7 +82,7 @@ const CustomCursor = () => {
         item.removeEventListener("mouseleave", handleMouseLeave);
       });
     };
-  }, [location.pathname]); // Runs every time the URL changes
+  }, [location.pathname]);
 
   return (
     <>
