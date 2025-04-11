@@ -290,6 +290,7 @@
 
 /* Interests Section */
 .row-interest {
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -444,7 +445,7 @@
 .timeline-dot {
   width: 12px;
   height: 12px;
-  background-color: #5d97d1;
+  background-color: #88c8db;
   border-radius: 50%;
   position: relative;
   z-index: 2;
@@ -455,7 +456,7 @@
   top: 1rem; /* below the dot */
   width: 0.2rem;
   height: 8rem; /* stretch downward */
-  background-color: #5d97d19e;
+  background-color: #88c8db8e;
 }
 
 .no-bar .timeline-bar {
