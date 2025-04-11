@@ -53,8 +53,8 @@ const AboutMe = () => {
             <h3>ABOUT ME</h3>
             <h1>Hi there! I'm a Creative Technologist</h1>
             <a
-              href="/AyushiKoweCV.pdf"
-              download="Ayushi Kowe Resume.pdf"
+              href={`${process.env.PUBLIC_URL}/AyushiKoweCV.pdf`}
+              download="AyushiKoweCV.pdf"
               className="download-btn"
             >
               Get Resume
