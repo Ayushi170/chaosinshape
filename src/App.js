@@ -36,6 +36,11 @@ function App() {
         }
       }, 300); // enough delay for full DOM render
     }
+    const [navigationEntry] = performance.getEntriesByType("navigation");
+if (navigationEntry?.type === "reload" && location.pathname !== "/") {
+  window.location.replace("/");
+}
+
   }, [location]);
   
 

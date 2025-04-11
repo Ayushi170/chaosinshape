@@ -417,12 +417,14 @@
 .education-title{
   font-size: clamp(0.7rem, 4vw, 1.5rem);
   font-weight: 500;
+  color: white;
 }
 
 .timeline-entry {
   display: flex;
   align-items: flex-start;
   position: relative;
+  padding-bottom: 2rem; /* spacing between entries */
 }
 
 .timeline-date {
@@ -439,8 +441,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   margin-right: 20px;
+  min-height: 100%; /* ensures it stretches full height of the entry */
 }
+
 
 .timeline-dot {
   width: 12px;
@@ -449,13 +454,14 @@
   border-radius: 50%;
   position: relative;
   z-index: 2;
+  top: 0;
 }
 
 .timeline-bar {
   position: absolute;
-  top: 1rem; /* below the dot */
-  width: 0.2rem;
-  height: 8rem; /* stretch downward */
+  top: 12px; /* exactly below the dot (match dot height) */
+  width: 2px;
+  height: calc(100% - 12px); /* stretch bar downward relative to dot */
   background-color: #88c8db8e;
 }
 
