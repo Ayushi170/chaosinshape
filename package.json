@@ -2,7 +2,7 @@
   "name": "chaosinshape",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ayushi170.github.io/my-react-portfolio",
+  "homepage": "https://ayushi170.github.io/chaosinshape",
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
     "bootstrap": "^5.3.3",

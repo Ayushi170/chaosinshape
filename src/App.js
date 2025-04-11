@@ -39,12 +39,6 @@ function App() {
   }, [location]);
   
 
-  useEffect(() => {
-    const resizeHandler = () => window.location.reload();
-    window.addEventListener("resize", resizeHandler);
-    return () => window.removeEventListener("resize", resizeHandler);
-  }, []);
-
   return loading ? (
     <Loading onComplete={() => setLoading(false)} />
   ) : (
