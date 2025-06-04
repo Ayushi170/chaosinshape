@@ -17,9 +17,15 @@ function Contact() {
 
                     <div className="contact-info">
                         <h4>
-                            <a href="mailto:ayushikowe03@gmail.com" className="contact-link">
-                                ayushikowe03@gmail.com
-                            </a>
+                        <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=ayushikowe03@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="contact-link"
+                        >
+                        ayushikowe03@gmail.com
+                        </a>
+
                         </h4>
 
                         <h4>
